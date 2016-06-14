@@ -15,6 +15,15 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 
 import Slider from 'material-ui/Slider';
 
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+
+import {List, ListItem} from 'material-ui/List';
+import {grey400, darkBlack, lightBlack} from 'material-ui/styles/colors';
+import Divider from 'material-ui/Divider';
+import Avatar from 'material-ui/Avatar';
+import IconButton from 'material-ui/IconButton';
+import MenuItem from 'material-ui/MenuItem';
+
 injectTapEventPlugin();
 
 
@@ -178,8 +187,116 @@ class App extends React.Component {
         <div>
           <Header />
           <LayoutControls />
+          <div className="flex-container">
+            <div className="row">
+              <div className="col-md-4"><GoogleHangouts /></div>
+              <div className="col-md-4"></div>
+              <div className="col-md-4"></div>
+            </div>
+          </div>
         </div>
       </MuiThemeProvider>
+    )
+  }
+};
+
+//*---------------------------------------*
+//  Google Hangouts
+//*---------------------------------------*
+class GoogleHangouts extends React.Component {
+  render() {
+    let style = {
+      header: {
+        backgroundImage: 'radial-gradient(50% 290%, #46C2BB 0%, #40CEB2 100%)'
+      },
+      body: {
+        height: '345px',
+        overflow: 'scroll'
+      }
+    };
+    return (
+      <Card>
+        <CardHeader style={style.header} />
+        <CardMedia style={style.body}>
+          <List>
+            <ListItem
+              leftAvatar={<Avatar src="http://lorempixel.com/128/128/people" />}
+              primaryText="Brendan Lim"
+              secondaryText={
+                <p>
+                  I&apos;ll be in your neighborhood doing errands this weekend. Do you want to grab brunch?
+                </p>
+              }
+              secondaryTextLines={1}
+            />
+            <Divider />
+            <ListItem
+              leftAvatar={<Avatar src="http://lorempixel.com/128/128/people" />}
+              primaryText="me, Scott, Jennifer"
+              secondaryText={
+                <p>
+                  Wish I could come, but I&apos;m out of town this weekend.
+                </p>
+              }
+              secondaryTextLines={1}
+            />
+            <Divider />
+            <ListItem
+              leftAvatar={<Avatar src="http://lorempixel.com/128/128/people" />}
+              primaryText="Grace Ng"
+              secondaryText={
+                <p>
+                  Do you have any Paris recs? Have you ever been?
+                </p>
+              }
+              secondaryTextLines={1}
+            />
+            <Divider />
+            <ListItem
+              leftAvatar={<Avatar src="http://lorempixel.com/128/128/people" />}
+              primaryText="Kerem Suer"
+              secondaryText={
+                <p>
+                  Do you have any ideas what we can get Heidi for her birthday? How about a pony?
+                </p>
+              }
+              secondaryTextLines={1}
+            />
+            <Divider />
+            <ListItem
+              leftAvatar={<Avatar src="http://lorempixel.com/128/128/people" />}
+              primaryText="Raquel Parrado"
+              secondaryText={
+                <p>
+                  We should eat this: grated squash. Corn and tomatillo tacos.
+                </p>
+              }
+              secondaryTextLines={1}
+            />
+            <ListItem
+              leftAvatar={<Avatar src="http://lorempixel.com/128/128/people" />}
+              primaryText="Kerem Suer"
+              secondaryText={
+                <p>
+                  Do you have any ideas what we can get Heidi for her birthday? How about a pony?
+                </p>
+              }
+              secondaryTextLines={1}
+            />
+            <Divider />
+            <ListItem
+              leftAvatar={<Avatar src="http://lorempixel.com/128/128/people" />}
+              primaryText="Raquel Parrado"
+              secondaryText={
+                <p>
+                  We should eat this: grated squash. Corn and tomatillo tacos.
+                </p>
+              }
+              secondaryTextLines={1}
+            />
+          </List>
+        </CardMedia>
+      </Card>
     )
   }
 };
