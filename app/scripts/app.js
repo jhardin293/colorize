@@ -13,6 +13,8 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
+import Slider from 'material-ui/Slider';
+
 injectTapEventPlugin();
 
 
@@ -53,19 +55,6 @@ var TodoApp = React.createClass({
   }
 });
 
-//*---------------------------------------*
-//  layoutControls 
-//*---------------------------------------*
-class layoutControls extends React.Component {
-  render() {
-    return (
-      <div className="layout-controls">
-        <Isvg src="images/menu.svg" className="controller"></Isvg>
-        <Isvg src="images/search.svg" className="controller"></Isvg>
-      </div>
-    );
-  }
-};
 
 //*---------------------------------------*
 //  Nav 
@@ -90,6 +79,28 @@ class Nav extends React.Component {
         </div>
       </div>
     )
+  }
+};
+
+//*---------------------------------------*
+//  layoutControls 
+//*---------------------------------------*
+class LayoutControls extends React.Component {
+  render() {
+    let style = {
+      slider: {
+        margin: 0
+      }
+    };
+    return (
+      <div className="flex-container">
+        <div className="layout-controls">
+          <Isvg src="images/app.svg" className="control"></Isvg>
+          <Isvg src="images/cogwheel.svg" className="control"></Isvg>
+          <Slider className="layout-slider" style={style.slider} defaultValue={0.5}/>
+        </div>
+      </div>
+    );
   }
 };
 
@@ -166,7 +177,7 @@ class App extends React.Component {
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div>
           <Header />
-          <layoutControls />
+          <LayoutControls />
         </div>
       </MuiThemeProvider>
     )
