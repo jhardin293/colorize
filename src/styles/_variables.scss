@@ -1,0 +1,24 @@
+//*---------------------------------------*
+//  Variables
+//*---------------------------------------*
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700);
+
+//Font stacks
+$primary-font:              'Open Sans', sans-serif;
+$roboto:                    'Roboto', sans-serif;
+
+
+$font-size:                 12px !default;
+$h1:                        60px !default;
+$h2:                        32px !default;
+$h3:                        24px !default;
+$h4:                        18px !default;
+$h5:                        16px !default;
+$p:                         14px !default;
+$small:                     $font-size;
+$base-font:                 14px !default;
+
+//colors
+$pink:                      #FF3366;
+$blue-grey:                 #A4B0BA;/* Rectangle 31: */

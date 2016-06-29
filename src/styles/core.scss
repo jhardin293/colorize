@@ -1,0 +1,81 @@
+:global {
+  @import 'base';
+  @import '~normalize.css/normalize';
+
+  // Some best-practice CSS that's useful for most apps
+  // Just remove them if they're not what you want
+  html, body {
+    width: 100%;
+    font-size: 100%;
+    font-family: $primary-font;
+    font-size: $base-font;
+  }
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+  
+  ul{
+      list-style-type: none;
+  }
+  body {
+      background-color: #F5F5F5;
+  }
+
+  a, a:hover, a:visited, a:active, a:focus {
+      position: relative;
+      cursor: pointer;
+      outline: 0;
+      text-decoration: none;
+  }
+
+  h1 {
+      font-size: $h1;
+      font-family: $primary-font;
+      font-weight: 400;
+  }
+
+  h2 {
+      font-size: $h2;
+      font-family: $primary-font;
+      font-weight: 400;
+  }
+
+  h3 {
+      font-size: $h3;
+      font-family: $primary-font;
+      font-weight: 400;
+  }
+
+  h4 {
+      font-size: $h4;
+      font-family: $primary-font;
+      font-weight: 400;
+  }
+
+  h5 {
+      font-size: $h5;
+      font-family: $primary-font;
+      font-weight: 400;
+  }
+
+  .flex-container {
+      position: relative;
+      padding-right: 25px;
+      padding-left: 25px;
+      margin-right: auto;
+      margin-left: auto;
+  }
+
+
+  @media (min-width: 768px) {
+      .flex-container {
+         max-width: 1410px;
+      }
+  }
+
+  @media (min-width: 992px) {
+      .flex-container {
+         max-width: 1410px;
+      }
+  }
+}
