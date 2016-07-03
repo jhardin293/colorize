@@ -1,15 +1,23 @@
+
+//*---------------------------------------*
+//  Slider
+//*---------------------------------------*u
+.container {
+    width: 145px;
+    .innerknob {
+        background-color: black;
+    }
+    .innerprogress {
+        background-color: #E0E4EC;
+    }
+}
+
+
+
 //*---------------------------------------*
 //  Google Hangouts
 //*---------------------------------------*u
-.card {
-    color: rgba(0, 0, 0, 0.870588);
-    position: relative;
-    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
-    font-family: Roboto, sans-serif;
-    box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
-    border-radius: 2px;
-    background-color: rgb(255, 255, 255);
-
+.googleHangouts {
     .hangoutsButton {
         position: absolute;
         bottom: 15px;
@@ -122,16 +130,34 @@
     }
 }
 
-//*---------------------------------------*
-//  Slider
-//*---------------------------------------*u
-.container {
-    width: 145px;
-    .innerknob {
-        background-color: black;
+// *---------------------------------------*
+//  Twitter Profile
+// *---------------------------------------*
+.TwitterProfile {
+    height: 409px;
+    .bg {
+        background-color: purple;
+        background-image: url(https://pbs.twimg.com/profile_banners/2218923590/1399582784/1500x500);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: 45%;
+        height: 40%;
+        width: 100%;
     }
-    .innerprogress {
-        background-color: #E0E4EC;
+    .profile {
+        text-align: center;
+        margin-top: -71px;
+    }
+    .avatar {
+        width: 126px;
+        height: 126px;
+        margin: 0 auto;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid white;
+        img {
+            width: 126px;
+            height: 126px;
+        }
     }
 }
-

@@ -18,7 +18,7 @@ class GoogleHangouts extends React.Component {
   render () {
     console.log(styles);
     return (
-      <div className={styles.card}>
+      <div className={styles.googleHangouts + ' ' + 'md-card'}>
         <Button className={styles.hangoutsButton} floating >
           <Isvg className={styles.draw} src={draw}/>
         </Button>
@@ -188,6 +188,27 @@ class GoogleHangouts extends React.Component {
 }
 
 // *---------------------------------------*
+//  Twitter Profile
+// *---------------------------------------*
+class TwitterProfile extends React.Component {
+  render () {
+    return (
+      <div className={styles.TwitterProfile + ' ' + 'md-card'}>
+        <div className={styles.bg}></div>
+        <div className={styles.profile}>
+          <div className={styles.avatar}>
+            <img src="https://pbs.twimg.com/profile_images/725222227193421824/FvRhAzx2.jpg" alt=""/>
+          </div>
+          <p className={styles.name}>Justin Hardin</p>
+          <a className={styles.handel}>@jhardin925</a>
+          <p className={styles.location}>Oakalnd Ca</p>
+        </div>
+      </div>
+    ); 
+  }
+}
+
+// *---------------------------------------*
 //  Layout Controls
 // *---------------------------------------*
 class LayoutControles extends React.Component {
@@ -221,7 +242,7 @@ export const HomeView = () => (
     </div>
     <div className='row'>
       <div className='col-sm-1 col-md-4'><GoogleHangouts /></div>
-      <div className='col-sm-1 col-md-4'></div>
+      <div className='col-sm-1 col-md-4'><TwitterProfile /></div>
       <div className='col-sm-1 col-md-4'></div>
     </div>
   </div>
