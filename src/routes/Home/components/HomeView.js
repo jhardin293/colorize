@@ -9,8 +9,9 @@ import Slider from 'react-toolbox/lib/slider';
 import app from 'images/app.svg';
 import cog from 'images/cogwheel.svg';
 import draw from 'images/draw.svg';
+import vdots from 'images/vertical-three-dots.svg';
 
-import {Button, IconButton} from 'react-toolbox/lib/button';
+import {Button} from 'react-toolbox/lib/button';
 // *---------------------------------------*
 //  Google Hangouts
 // *---------------------------------------*
@@ -20,7 +21,7 @@ class GoogleHangouts extends React.Component {
     return (
       <div className={styles.googleHangouts + ' ' + 'md-card'}>
         <Button className={styles.hangoutsButton} floating >
-          <Isvg className={styles.draw} src={draw}/>
+          <Isvg className={styles.draw} src={draw} />
         </Button>
         <div className={styles.title}>
           <div className={styles.menuTitle}>
@@ -194,17 +195,34 @@ class TwitterProfile extends React.Component {
   render () {
     return (
       <div className={styles.TwitterProfile + ' ' + 'md-card'}>
+        <div className={styles.menu}>
+          <Isvg src={vdots} />
+        </div>
         <div className={styles.bg}></div>
         <div className={styles.profile}>
           <div className={styles.avatar}>
-            <img src="https://pbs.twimg.com/profile_images/725222227193421824/FvRhAzx2.jpg" alt=""/>
+            <img src='https://pbs.twimg.com/profile_images/725222227193421824/FvRhAzx2.jpg' />
           </div>
           <p className={styles.name}>Justin Hardin</p>
           <a className={styles.handel}>@jhardin925</a>
           <p className={styles.location}>Oakalnd Ca</p>
         </div>
+        <div className={styles.stats}>
+          <div className={styles.stat}>
+            <p>Tweet</p>
+            <h4>12.5k</h4>
+          </div>
+          <div className={styles.stat}>
+            <p>Following</p>
+            <h4>793</h4>
+          </div>
+          <div className={styles.stat}>
+            <p>Followers</p>
+            <h4>3,187</h4>
+          </div>
+        </div>
       </div>
-    ); 
+    );
   }
 }
 
@@ -213,7 +231,7 @@ class TwitterProfile extends React.Component {
 // *---------------------------------------*
 class LayoutControles extends React.Component {
   state = {
-    slider: 0,
+    slider: 0
   };
 
   handleChange = (slider, value) => {
@@ -227,7 +245,7 @@ class LayoutControles extends React.Component {
         <Isvg src={app} />
         <Isvg src={cog} />
         <Slider min={0} max={10} value={this.state.slider}
-          onChange={this.handleChange.bind(this, 'slider')} 
+          onChange={this.handleChange.bind(this, 'slider')}
           theme={styles}
           />
       </div>
