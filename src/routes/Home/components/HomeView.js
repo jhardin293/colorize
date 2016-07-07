@@ -12,12 +12,13 @@ import draw from 'images/draw.svg';
 import vdots from 'images/vertical-three-dots.svg';
 
 import {Button} from 'react-toolbox/lib/button';
+
+var d3 = window.d3;
 // *---------------------------------------*
 //  Google Hangouts
 // *---------------------------------------*
 class GoogleHangouts extends React.Component {
   render () {
-    console.log(styles);
     return (
       <div className={styles.googleHangouts + ' ' + 'md-card'}>
         <Button className={styles.hangoutsButton} floating >
@@ -195,7 +196,7 @@ class TwitterProfile extends React.Component {
   render () {
     return (
       <div className={styles.TwitterProfile + ' ' + 'md-card'}>
-        <div className={styles.menu}>
+        <div className={styles.menu + ' ' + 'vert-menu'}>
           <Isvg src={vdots} />
         </div>
         <div className={styles.bg}></div>
@@ -227,6 +228,84 @@ class TwitterProfile extends React.Component {
 }
 
 // *---------------------------------------*
+//  Time Keeper
+// *---------------------------------------*
+class TimeKeeper extends React.Component {
+  constructor () {
+    super();
+    this.state = {
+      data: [
+        { x: 0, y: 10 },
+        { x: 1, y: 15 },
+        { x: 2, y: 35 },
+        { x: 3, y: 20 }
+      ]
+    };
+  };
+
+  componentDidMount () {
+    //console.log(this._renderChart(), 'chart');
+    // console.log(this.state.data);
+  };
+
+  componentDidUpdate () {
+  };
+
+  componentWillUnmount () {
+
+  };
+
+  _renderChart () {
+    // Return path d string
+    var data = this.state.data;
+
+    var margin = {top: 20, right: 20, bottom: 40, left: 50}, width = 575 - margin.left - margin.right, height = 350 - margin.top - margin.bottom;
+
+    var x = d3.scaleLinear()
+    .domain([0, d3.max(data, function(d) { return d.x; })])
+    .range([0, width]);
+
+    var y = d3.scaleLinear()
+        .domain([0, d3.max(data, function(d) { return d.y; })])
+        .range([height, 0]);
+
+    var area = d3.area()
+      .x(function(d) { return x(d.x); })
+      .y0(height)
+      .y1(function(d) { return y(d.y); });
+      // .interpolate("linear");
+
+    var dGenerator = data.map(function(d,i) {
+      return area(data);
+    });
+
+    return dGenerator[0];
+    // return data;
+
+  };
+
+  render () {
+    return (
+      <div className={styles.TimeKeeper + ' ' + 'md-card'}>
+        <div className={styles.viz}>
+          <div className={styles.menu + ' ' + 'vert-menu'}>
+            <Isvg src={vdots} />
+          </div>
+          <div className={styles.title}>
+            <h3>Total Sales</h3>
+            <p>November 2015</p>
+          </div>
+          <svg className={styles.vizContainer} width='100%' height='100%'>
+            <path 
+              d={this._renderChart()}
+            />
+          </svg>
+        </div>
+      </div>
+    );
+  };
+}
+// *---------------------------------------*
 //  Layout Controls
 // *---------------------------------------*
 class LayoutControles extends React.Component {
@@ -235,6 +314,7 @@ class LayoutControles extends React.Component {
   };
 
   handleChange = (slider, value) => {
+    console.log(slider, value, 'slider item');
     const newState = {};
     newState[slider] = value;
     this.setState(newState);
@@ -261,7 +341,7 @@ export const HomeView = () => (
     <div className='row'>
       <div className='col-sm-1 col-md-4'><GoogleHangouts /></div>
       <div className='col-sm-1 col-md-4'><TwitterProfile /></div>
-      <div className='col-sm-1 col-md-4'></div>
+      <div className='col-sm-1 col-md-4'><TimeKeeper /></div>
     </div>
   </div>
 );

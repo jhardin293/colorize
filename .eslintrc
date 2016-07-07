@@ -19,6 +19,7 @@
   },
   "rules": {
     "semi" : [2, "always"],
+    "allowBind": true,
     "max-len": [2, 120, 2],
     "generator-star-spacing": 0,
     "babel/generator-star-spacing": 1

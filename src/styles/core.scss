@@ -90,7 +90,27 @@
     box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
     border-radius: 2px;
     background-color: rgb(255, 255, 255);
+    margin-bottom: 30px;
   }
+
+  // *---------------------------------------*
+  //  Vert-Menu
+  // *---------------------------------------*
+  .vert-menu {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+    svg {
+      height: 20px;
+      width: 20px;
+    } 
+  }
+
 }
+
 
 
